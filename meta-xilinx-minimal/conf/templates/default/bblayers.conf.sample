@@ -9,9 +9,9 @@ BBLAYERS ?= " \
   ##COREBASE##/meta \
   ##COREBASE##/../meta-xilinx/meta-xilinx-bsp \
   ##COREBASE##/../meta-xilinx/meta-xilinx-core \
-  ##COREBASE##/../meta-xilinx-standalone \
+  ##COREBASE##/../meta-xilinx/meta-xilinx-standalone \
   ##COREBASE##/../meta-xilinx/meta-xilinx-vendor \
-  ##COREBASE##/../meta-xilinx-multimedia \
+  ##COREBASE##/../meta-xilinx/meta-xilinx-multimedia \
   ##COREBASE##/../meta-xilinx-tools \
   ##COREBASE##/../meta-arm/meta-arm \
   ##COREBASE##/../meta-arm/meta-arm-toolchain \
