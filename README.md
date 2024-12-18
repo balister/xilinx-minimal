@@ -23,9 +23,9 @@ Getting Started
 
     $ cd xilinx-minimal
 
-3. Update the submodules:
+3. Update the submodules (meta-xilinx also has a submodule):
 
-    $ git submodule update --init
+    $ git submodule update --init --recursive
 
 4. Initialize the build system:
 
