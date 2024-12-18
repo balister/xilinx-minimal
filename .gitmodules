@@ -9,12 +9,16 @@
 [submodule "meta-xilinx-tools"]
 	path = meta-xilinx-tools
 	url = https://github.com/Xilinx/meta-xilinx-tools.git
-	branch = scarthgap-next
+	branch = scarthgap
 [submodule "meta-xilinx"]
 	path = meta-xilinx
 	url = https://github.com/Xilinx/meta-xilinx.git
-	branch = scarthgap-next
+	branch = scarthgap
 [submodule "meta-arm"]
 	path = meta-arm
 	url = https://git.yoctoproject.org/meta-arm
+	branch = scarthgap
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = https://github.com/openembedded/meta-openembedded
 	branch = scarthgap
