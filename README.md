@@ -19,10 +19,9 @@ Getting Started
 
     $ git clone https://github.com/balister/xilinx-minimal.git
 
-2. Check out the appropriate branch:
+2. Check out the appropriate branch (default is OK for now):
 
     $ cd xilinx-minimal
-    $ git checkout -b scarthgap origin/scarthgap
 
 3. Update the submodules:
 
@@ -30,7 +29,7 @@ Getting Started
 
 4. Initialize the build system:
 
-    $ TEMPLATECONF=\`pwd\`/conf/templates/default  source ./openembedded-core/oe-init-build-env ./build ./bitbake
+    $ TEMPLATECONF=\`pwd\`/meta-xilinx-minimal/conf/templates/default  source ./openembedded-core/oe-init-build-env ./build ./bitbake
 
 5. Select the MACHINE to build for:
 
