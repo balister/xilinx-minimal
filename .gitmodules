@@ -22,3 +22,15 @@
 	path = meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded
 	branch = scarthgap
+[submodule "meta-amd-adaptive-socs"]
+	path = meta-amd-adaptive-socs
+	url = https://github.com/Xilinx/meta-amd-adaptive-socs.git
+	branch = scarthgap
+[submodule "meta-virtualization"]
+	path = meta-virtualization
+	url = https://git.yoctoproject.org/meta-virtualization
+	branch = scarthgap
+[submodule "meta-openamp"]
+	path = meta-openamp
+	url = https://github.com/Xilinx/meta-openamp.git
+	branch = rel-v2024.2
