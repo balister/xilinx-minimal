@@ -33,7 +33,7 @@ Getting Started
 
 5. Select the MACHINE to build for:
 
-    $ export MACHINE=zcu102-zynqmp   (default from local.conf)
+    $ export MACHINE=zynqmp-zcu104-sdt-full   (default from local.conf)
 
 6. Build an image:
 

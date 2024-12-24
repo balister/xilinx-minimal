@@ -29,7 +29,7 @@ LICENSE_FLAGS_ACCEPTED += " xilinx"
 #MACHINE ?= "qemux86-64"
 #
 # This sets the default machine to be qemux86-64 if no other machine is selected:
-MACHINE ??= "zcu102-zynqmp"
+MACHINE ??= "zynqmp-zcu104-sdt-full"
 
 # These are some of the more commonly used values. Looking at the files in the
 # meta/conf/machine directory, or the conf/machine directory of any additional layers
