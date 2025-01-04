@@ -34,3 +34,6 @@
 	path = meta-openamp
 	url = https://github.com/Xilinx/meta-openamp.git
 	branch = rel-v2024.2
+[submodule "pyrex"]
+	path = pyrex
+	url = https://github.com/garmin/pyrex.git
