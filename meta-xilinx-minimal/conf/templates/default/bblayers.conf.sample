@@ -8,7 +8,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   ##COREBASE##/meta \
   ##COREBASE##/../meta-xilinx/meta-xilinx-bsp \
-  ##COREBASE##/../meta-xilinx/meta-xilinx-microblaze \
+  ##COREBASE##/../meta-xilinx/meta-microblaze \
   ##COREBASE##/../meta-xilinx/meta-xilinx-core \
   ##COREBASE##/../meta-xilinx/meta-xilinx-standalone \
   ##COREBASE##/../meta-xilinx/meta-xilinx-standalone-sdt \
@@ -24,5 +24,5 @@ BBLAYERS ?= " \
   ##COREBASE##/../meta-openembedded/meta-filesystems \
   ##COREBASE##/../meta-openembedded/meta-networking \
   ##COREBASE##/../meta-openembedded/meta-multimedia \
-  ##COREBASE##/../meta-openembedded/meta-xilinx-minimal \
+  ##COREBASE##/../meta-xilinx-minimal \
   "
