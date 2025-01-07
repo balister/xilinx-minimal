@@ -1,4 +1,9 @@
+#Build Xilinx stuff
 LICENSE_FLAGS_ACCEPTED += " xilinx"
+
+# We need to override the value from OE-core
+TCLIBCAPPEND:forcevariable = ""
+
 #
 # This file is your local configuration file and is where all local user settings
 # are placed. The comments in this file give some guide to the options a new user
