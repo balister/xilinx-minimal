@@ -17,7 +17,6 @@ BBLAYERS ?= " \
   ##COREBASE##/../meta-amd-adaptive-socs/meta-amd-adaptive-socs-bsp \
   ##COREBASE##/../meta-arm/meta-arm \
   ##COREBASE##/../meta-arm/meta-arm-toolchain \
-  ##COREBASE##/../meta-openamp \
   ##COREBASE##/../meta-virtualization \
   ##COREBASE##/../meta-openembedded/meta-oe \
   ##COREBASE##/../meta-openembedded/meta-python \
