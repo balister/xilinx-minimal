@@ -9,11 +9,11 @@
 [submodule "meta-xilinx-tools"]
 	path = meta-xilinx-tools
 	url = https://github.com/Xilinx/meta-xilinx-tools.git
-	branch = scarthgap
+	branch = scarthgap-next
 [submodule "meta-xilinx"]
 	path = meta-xilinx
 	url = https://github.com/Xilinx/meta-xilinx.git
-	branch = scarthgap
+	branch = scarthgap-next
 [submodule "meta-arm"]
 	path = meta-arm
 	url = https://git.yoctoproject.org/meta-arm
@@ -25,7 +25,7 @@
 [submodule "meta-amd-adaptive-socs"]
 	path = meta-amd-adaptive-socs
 	url = https://github.com/Xilinx/meta-amd-adaptive-socs.git
-	branch = scarthgap
+	branch = scarthgap-next
 [submodule "meta-virtualization"]
 	path = meta-virtualization
 	url = https://git.yoctoproject.org/meta-virtualization
