@@ -33,3 +33,6 @@
 [submodule "pyrex"]
 	path = pyrex
 	url = https://github.com/garmin/pyrex.git
+[submodule "meta-sgl"]
+	path = meta-sgl
+	url = https://github.com/elisa-tech/meta-sgl.git
