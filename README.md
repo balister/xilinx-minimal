@@ -29,11 +29,15 @@ Getting Started
 
 4. Initialize the build system:
 
+   - For a supported host distro
+
     $ TEMPLATECONF=\`pwd\`/meta-xilinx-minimal/conf/templates/default  source ./openembedded-core/oe-init-build-env ./build ./bitbake
 
-4.1 If you are using an unsupported distro, use pyrex to containerize the build:
+   - For an unsupported host distro, use pyrex to containerize the build:
+
     $ source pyrex.source
-    $ source pyrex-init-build-env
+
+    $ TEMPLATECONF=`pwd`/meta-xilinx-minimal/conf/templates/default source pyrex-init-build-env
 
 5. Select the MACHINE to build for:
 
