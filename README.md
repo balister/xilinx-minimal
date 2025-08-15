@@ -31,6 +31,10 @@ Getting Started
 
     $ TEMPLATECONF=\`pwd\`/meta-xilinx-minimal/conf/templates/default  source ./openembedded-core/oe-init-build-env ./build ./bitbake
 
+4.1 If you are using an unsupported distro, use pyrex to containerize the build:
+    $ source pyrex.source
+    $ source pyrex-init-build-env
+
 5. Select the MACHINE to build for:
 
     $ export MACHINE=zynqmp-zcu104-sdt-full   (default from local.conf)
