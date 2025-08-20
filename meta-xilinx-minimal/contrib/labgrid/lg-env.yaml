@@ -25,10 +25,11 @@ targets:
         login_prompt: ' login:'
         username: 'root'
         login_timeout: 100
-      zcu104Strategy: {}
+#      zcu104Strategy: {}
+      UBootStrategy: {}
   images:
     sd: images/image.wic.bz2
 
   imports:
-   - strategy.py
+   - myStrategy.py
 
