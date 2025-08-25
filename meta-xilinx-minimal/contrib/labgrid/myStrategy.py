@@ -15,8 +15,8 @@ class Status(enum.Enum):
 
 @target_factory.reg_driver
 @attr.s(eq=False)
-class zcu104Strategy(Strategy):
-    """zcu104Strategy - Strategy to bootstrap and switch to uboot or shell"""
+class ZCU104Strategy(Strategy):
+    """ZCU104Strategy - Strategy to bootstrap and switch to uboot or shell"""
     bindings = {
         "power": "PowerProtocol",
         "console": "ConsoleProtocol",
