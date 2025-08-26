@@ -27,8 +27,8 @@ targets:
         login_timeout: 100
       ZCU104Strategy: {}
 #      UBootStrategy: {}
-  images:
-    sd: images/image.wic.bz2
+images:
+  sd_image: images/image.wic.qemu-sd
 
 imports:
  - myStrategy.py

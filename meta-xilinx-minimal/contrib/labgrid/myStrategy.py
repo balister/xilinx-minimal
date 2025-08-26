@@ -19,6 +19,8 @@ class ZCU104Strategy(Strategy):
     """ZCU104Strategy - Strategy to bootstrap and switch to uboot or shell"""
     bindings = {
         "power": "PowerProtocol",
+        "sdmux": "USBSDMuxDriver",
+        "storage": "USBStorageDriver",
         "console": "ConsoleProtocol",
         "uboot": "UBootDriver",
         "shell": "ShellDriver",
@@ -28,6 +30,18 @@ class ZCU104Strategy(Strategy):
 
     def __attrs_post_init__(self):
         super().__attrs_post_init__()
+
+    def bootstrap(self):
+        self.target.activate(self.sdmux)
+        self.sdmux.set_mode("host")
+        
+        self.target.activate(self.storage)
+        image = self.target.env.config.get_image_path("sd_image")
+
+        self.storage.write_image(image)
+        self.target.deactivate(self.storage)
+
+        self.sdmux.set_mode("dut")
 
     def transition(self, status):
         if not isinstance(status, Status):
@@ -42,6 +56,9 @@ class ZCU104Strategy(Strategy):
             self.power.off()
         elif status == Status.uboot:
             self.transition(Status.off)
+
+            self.bootstrap()
+
             self.target.activate(self.console)
             # cycle power
             self.power.cycle()
