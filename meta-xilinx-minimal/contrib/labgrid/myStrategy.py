@@ -2,9 +2,10 @@ import enum
 
 import attr
 
+from pexpect import TIMEOUT
+
 from labgrid.factory import target_factory
 from labgrid.strategy.common import Strategy, StrategyError
-
 
 class Status(enum.Enum):
     unknown = 0
@@ -27,6 +28,7 @@ class ZCU104Strategy(Strategy):
     }
 
     status = attr.ib(default=Status.unknown)
+    flashed = False
 
     def __attrs_post_init__(self):
         super().__attrs_post_init__()
@@ -34,12 +36,14 @@ class ZCU104Strategy(Strategy):
     def bootstrap(self):
         self.target.activate(self.sdmux)
         self.sdmux.set_mode("host")
-        
-        self.target.activate(self.storage)
-        image = self.target.env.config.get_image_path("sd_image")
+ 
+        if not self.flashed:
+            self.target.activate(self.storage)
+            image = self.target.env.config.get_image_path("sd_image")
 
-        self.storage.write_image(image)
-        self.target.deactivate(self.storage)
+            self.storage.write_image(image)
+            self.target.deactivate(self.storage)
+            self.flashed = True
 
         self.sdmux.set_mode("dut")
 
@@ -61,9 +65,17 @@ class ZCU104Strategy(Strategy):
 
             self.target.activate(self.console)
             # cycle power
-            self.power.cycle()
-            # interrupt uboot
-            self.target.activate(self.uboot)
+            timeout_count = 0
+            while True:
+                try:
+                    self.power.cycle()
+                    # interrupt uboot
+                    self.target.activate(self.uboot)
+                    break
+                except TIMEOUT:
+                    timeout_count += 1
+                    if timeout_count == 3:
+                        raise
         elif status == Status.shell:
             # transition to uboot
             self.transition(Status.uboot)
@@ -85,5 +97,5 @@ class ZCU104Strategy(Strategy):
         elif status == Status.shell:
             self.target.activate(self.shell)
         else:
-            raise StrategyError("can not force state {}".format(status))
+            raise StrategyError(f"can not force state {status}")
         self.status = status
