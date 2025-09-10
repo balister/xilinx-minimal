@@ -37,7 +37,7 @@ Getting Started
 
     $ source pyrex.source
 
-    $ TEMPLATECONF=`pwd`/meta-xilinx-minimal/conf/templates/default source pyrex-init-build-env
+    $ TEMPLATECONF=\`pwd\`/meta-xilinx-minimal/conf/templates/default source pyrex-init-build-env
 
 5. Select the MACHINE to build for:
 
