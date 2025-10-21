@@ -1,2 +1,6 @@
 build
 build-pi
+meta-xilinx-minimal/contrib/labgrid/__pycache__/
+meta-xilinx-minimal/contrib/labgrid/console_main
+meta-xilinx-minimal/contrib/labgrid/images/
+
