@@ -6,6 +6,7 @@ from pexpect import TIMEOUT
 
 from labgrid.factory import target_factory
 from labgrid.strategy.common import Strategy, StrategyError
+from labgrid.driver.usbstoragedriver import Mode
 
 class Status(enum.Enum):
     unknown = 0
@@ -40,8 +41,7 @@ class ZCU104Strategy(Strategy):
         if not self.flashed:
             self.target.activate(self.storage)
             image = self.target.env.config.get_image_path("sd_image")
-
-            self.storage.write_image(image)
+            self.storage.write_image(image, mode=Mode.BMAPTOOL)
             self.target.deactivate(self.storage)
             self.flashed = True
 
