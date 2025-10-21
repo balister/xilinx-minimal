@@ -6,9 +6,8 @@ build-job:
   variables:
     SSTATE_DIR: /cache/sstate
     DL_DIR: /cache/downloads
-    TMPDIR: /cache//xilinx-minimal/$CI_COMMIT_BRANCH/tmp
+    TMPDIR: /cache/xilinx-minimal/$CI_COMMIT_BRANCH/tmp
   script:
-    - ls -al
     - rm -rf build
     - TEMPLATECONF=`pwd`/meta-xilinx-minimal/conf/templates/default  source ./openembedded-core/oe-init-build-env ./build ./bitbake
     - echo "DL_DIR = \"$DL_DIR\"" > conf/auto.conf
