@@ -1,0 +1,26 @@
+targets:
+  main:
+    resources:
+      RemotePlace:
+        name: zcu104
+    drivers:
+      SerialDriver: {}
+      UBootDriver:
+        prompt: "ZynqMP>"
+      NetworkPowerDriver:
+        delay: 3.0
+      USBStorageDriver: {}
+      USBSDMuxDriver: {}
+      ShellDriver:
+        prompt: 'root@[\w\-]+:[^ ]+ '
+        login_prompt: ' login:'
+        username: 'root'
+        login_timeout: 100
+      ZCU104Strategy: {}
+#      UBootStrategy: {}
+images:
+  sd_image: images/image.wic.qemu-sd
+
+imports:
+ - myStrategy.py
+
