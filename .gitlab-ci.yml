@@ -16,6 +16,7 @@ build-job:
     - echo "SSTATE_DIR = \"$SSTATE_DIR\"" >> conf/auto.conf
     - echo "TMPDIR = \"$TMPDIR\"" >> conf/auto.conf
     - cat conf/auto.conf
+    - id
     - bitbake core-image-minimal
 
 test-job1:
