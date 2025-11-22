@@ -1,4 +1,4 @@
-image: ghcr.io/siemens/kas/kas:3.1
+image: oebuild
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
