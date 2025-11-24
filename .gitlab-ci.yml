@@ -37,6 +37,7 @@ test-job1:
 
   after_script:
     - source /home/oebuilds/labgrid-venv/bin/activate
+    - labgrid-client -x 192.168.11.221 -p zcu104 power off
     - labgrid-client -x 192.168.11.221 -p zcu104 release
 
 deploy-prod:
