@@ -1,4 +1,4 @@
-FROM fedora:41
+FROM fedora:38
 
 RUN dnf install -y bzip2 ccache chrpath cpio cpp diffstat diffutils file \
 findutils gawk gcc gcc-c++ git glibc-devel glibc-langpack-en gzip hostname \
@@ -7,10 +7,10 @@ perl-FindBin perl-Text-ParseWords perl-Thread-Queue perl-bignum perl-locale \
 python python3 python3-GitPython python3-jinja2 python3-pexpect python3-pip \
 rpcgen socat tar texinfo unzip wget which xz zstd
 
-WORKDIR /home/oebuilds
-
 RUN useradd oebuilds
 USER oebuilds
+
+WORKDIR /home/oebuilds
 
 CMD ["/bin/bash"]
 
